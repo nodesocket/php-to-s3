@@ -3,17 +3,23 @@
 
 	define("AWS_ACCESS_KEY", "");
 	define("AWS_SECRET_KEY", "");
+	define("VERSION", "v1.0.0");
 
 	if(!isset($argv[1]) || empty($argv[1])) {
 		fwrite(STDERR, "\tusage: php -f php-to-s3.php <bucket-name> <source-dir>\n");
 		exit(1);
 	}
 
+	if($argv[1] === "version" && empty($argv[2])) {
+		fwrite(STDOUT, "\t" . VERSION . "\n");
+		exit(0);
+	}
+
 	if(!isset($argv[2]) || empty($argv[2])) {
 		fwrite(STDERR, "\tusage: php -f php-to-s3.php <bucket-name> <source-dir>\n");
 		exit(2);
 	}
-
+ 
 	$bucket = $argv[1];
 	$source = $argv[2];
 

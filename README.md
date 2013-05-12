@@ -1,7 +1,7 @@
 php-to-s3
 ---------
 
-Upload and entire source directory recursively to *Amazon S3* from a PHP command line script. The connection with *S3* is over SSL.
+####Upload an entire source directory recursively to *Amazon S3* from a PHP command line script. The connection with *S3* is over SSL.####
 
 All objects are stored using the following *S3* options:
 
@@ -12,17 +12,29 @@ All objects are stored using the following *S3* options:
 Usage
 -----
 
-    usage: php -f php-to-s3.php <bucket-name> <source-dir>
+Set your **AWS ACCESS KEY** and **AWS SECRET KEY** directly in `php-to-s3.php`, or if your feeling fancy in environmental variables.
+
+```` bash
+usage: php -f php-to-s3.php <bucket-name> <source-dir>
+````
     
 Examples
 --------
 
-    # Relative source path
-    php -f php-to-s3.php my-bucket backups
-    
-    # Absolute source path
-    php -f php-to-s3.php my-bucket /mysql/backups
-    
+```` bash
+# Relative source path
+php -f php-to-s3.php my-bucket backups
+````
+
+```` bash    
+# Absolute source path
+php -f php-to-s3.php my-bucket /mysql/backups
+````
+
+```` bash
+# Get the version of php-to-s3
+php -f php-to-s3.php version
+````
 
 Limitations
 -----------
@@ -31,10 +43,32 @@ Limitations
 + The bucket must be located in the `US West (Oregon)` region, unless you modify `$s3->setEndpoint("s3-us-west-2.amazonaws.com");`
 + Files larger than **2GB** are not supported on **32 bit** systems due to PHP’s signed integer problem.
 
+Current Version
+---------------
+
+https://github.com/nodesocket/php-to-s3/blob/master/VERSION
+
 Support, Bugs, And Feature Requests
 -----------------------------------
 
-Create issues on GitHub (https://github.com/nodesocket/php-to-s3/issues).
+Create issues here on GitHub (https://github.com/nodesocket/php-to-s3/issues).
+
+Versioning
+----------
+
+For transparency and insight into our release cycle, and for striving to maintain backward compatibility, php-to-s3 will be maintained under the semantic versioning guidelines.
+
+Releases will be numbered with the follow format:
+
+`<major>.<minor>.<patch>`
+
+And constructed with the following guidelines:
+
++ Breaking backward compatibility bumps the major (and resets the minor and patch)
++ New additions without breaking backward compatibility bumps the minor (and resets the patch)
++ Bug fixes and misc changes bumps the patch
+
+For more information on semantic versioning, visit http://semver.org/.
 
 License & Legal
 ---------------
