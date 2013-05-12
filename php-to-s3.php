@@ -28,7 +28,7 @@
 	define("AWS_ACCESS_KEY", "");
 	define("AWS_SECRET_KEY", "");
 
-	define("VERSION", "v1.1.0");
+	define("VERSION", "v1.1.1");
 
 	if(!isset($argv[1]) || empty($argv[1])) {
 		fwrite(STDERR, "\tusage: php -f php-to-s3.php <bucket-name> <source-dir>\n");
@@ -45,8 +45,8 @@
 		exit(2);
 	}
  
-	$bucket = $argv[1];
-	$source = $argv[2];
+	$bucket = trim($argv[1]);
+	$source = rtrim(trim($argv[2]), "/");
 
 	$env_access_key = getenv("AWS_ACCESS_KEY");
 	$env_secret_key = getenv("AWS_SECRET_KEY");
