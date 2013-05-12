@@ -28,7 +28,7 @@
 	define("AWS_ACCESS_KEY", "");
 	define("AWS_SECRET_KEY", "");
 
-	define("VERSION", "v1.0.0");
+	define("VERSION", "v1.1.0");
 
 	if(!isset($argv[1]) || empty($argv[1])) {
 		fwrite(STDERR, "\tusage: php -f php-to-s3.php <bucket-name> <source-dir>\n");
@@ -73,6 +73,7 @@
 	        if ($file !== "." && $file !== ".." && $file !== ".DS_Store") {
 	            try {
 	            	$s3->putObject($s3->inputFile($source . "/" . $file), $bucket, $file, S3::ACL_PRIVATE, array(), array(), S3::STORAGE_CLASS_STANDARD, S3::SSE_AES256);
+	            	fwrite(STDOUT, "\t[notice] Successfully put file '" . $source . "/" . $file . "'.\n");
 	            } catch(Exception $ex) {
 	            	fwrite(STDERR, "\t[error] Failed to put file '" . $source . "/" . $file . "'.\n\t\tdetails: " . $ex->getMessage() . "\n");
 	            }
