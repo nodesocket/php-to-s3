@@ -1,7 +1,7 @@
 php-to-s3
 ---------
 
-####Upload an entire source directory recursively to *Amazon S3* from a PHP command line script. The connection with *S3* is over SSL.####
+####Upload an entire source directory recursively to *Amazon S3* from a PHP command line interface. The connection with *S3* is over SSL.####
 
 All objects are stored using the following *S3* options:
 
