@@ -12,7 +12,7 @@ All objects are stored using the following *S3* options:
 Usage
 -----
 
-Set your **AWS ACCESS KEY** and **AWS SECRET KEY** directly in `php-to-s3.php`, or if your feeling fancy in environmental variables.
+Set your **AWS ACCESS KEY** and **AWS SECRET KEY** directly in `php-to-s3.php`, or if your feeling fancy in environmental variables `AWS_ACCESS_KEY` and `AWS_SECRET_KEY`.
 
 ```` bash
 usage: php -f php-to-s3.php <bucket-name> <source-dir>
