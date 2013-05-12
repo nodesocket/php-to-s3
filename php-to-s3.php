@@ -28,8 +28,9 @@
 	}
 
 	$s3 = new S3($aws_access_key, $aws_secret_key);
-	$s3->setSSL(true);
 	$s3->setExceptions(true);
+	$s3->setSSL(true);
+	$s3->setEndpoint("s3-us-west-2.amazonaws.com");
 
 	if(!is_dir($source)) {
 		fwrite(STDERR, "\t[error] Source directory '" . $source . "' either does not exist, or is not a directory.\n");
