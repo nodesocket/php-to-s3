@@ -19,6 +19,8 @@
 	# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 	# See the License for the specific language governing permissions and
 	# limitations under the License.
+	#
+	# Amazon S3 is a trademark of Amazon.com, Inc. or its affiliates.
 	*/
 
 	require(__DIR__ . "/lib/S3.php");
