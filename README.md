@@ -7,7 +7,7 @@ All objects are stored using the following *S3* options:
 
 + private ACL permissions
 + standard storage
-+ server side encrypted *(SSE AES256)*
++ server side encrypted *(AES256)*
 
 Usage
 -----
@@ -23,12 +23,12 @@ Examples
 
 ```` bash
 # Relative source path
-php -f php-to-s3.php my-bucket backups
+php -f php-to-s3.php my-bucket ../backups/
 ````
 
 ```` bash    
 # Absolute source path
-php -f php-to-s3.php my-bucket /mysql/backups
+php -f php-to-s3.php my-bucket /mysql/backups/
 ````
 
 ```` bash
@@ -40,7 +40,7 @@ Limitations
 -----------
 
 + The bucket must already exist, i.e. it is **not lazy created**.
-+ The bucket must be located in the `US West (Oregon)` region, unless you modify `$s3->setEndpoint("s3-us-west-2.amazonaws.com");`
++ The bucket must be located in the **US West (Oregon)** region, unless you modify `$s3->setEndpoint("s3-us-west-2.amazonaws.com");`
 + Files larger than **2GB** are not supported on **32 bit** systems due to PHP’s signed integer problem.
 
 Current Version
@@ -80,3 +80,5 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
     http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Amazon S3 is a trademark of Amazon.com, Inc. or its affiliates.
