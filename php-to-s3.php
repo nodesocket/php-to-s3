@@ -25,6 +25,7 @@
 
 	define("AWS_ACCESS_KEY", "");
 	define("AWS_SECRET_KEY", "");
+
 	define("VERSION", "v1.0.0");
 
 	if(!isset($argv[1]) || empty($argv[1])) {
