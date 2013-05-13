@@ -2,7 +2,7 @@
 	/*
 	* php-to-s3.php
 	*
-	* https://github.com/nodesocket/php-to-s3 
+	* https://github.com/nodesocket/php-to-s3
 	*/
 
 	/*
@@ -23,12 +23,12 @@
 	# Amazon S3 is a trademark of Amazon.com, Inc. or its affiliates.
 	*/
 
-	require(__DIR__ . "/lib/S3.php");
+	require_once(__DIR__ . "/lib/S3.php");
 
 	define("AWS_ACCESS_KEY", "");
 	define("AWS_SECRET_KEY", "");
 
-	define("VERSION", "v1.1.1");
+	define("VERSION", "v1.1.2");
 
 	if(!isset($argv[1]) || empty($argv[1])) {
 		fwrite(STDERR, "\tusage: php -f php-to-s3.php <bucket-name> <source-dir>\n");
@@ -44,7 +44,7 @@
 		fwrite(STDERR, "\tusage: php -f php-to-s3.php <bucket-name> <source-dir>\n");
 		exit(2);
 	}
- 
+
 	$bucket = trim($argv[1]);
 	$source = rtrim(trim($argv[2]), "/");
 
@@ -55,7 +55,7 @@
 
 	if(empty($aws_access_key) || empty($aws_secret_key)) {
 		fwrite(STDERR, "\t[error] AWS_ACCESS_KEY and AWS_SECRET_KEY must be set.\n");
-		exit(3);	
+		exit(3);
 	}
 
 	$s3 = new S3($aws_access_key, $aws_secret_key);
